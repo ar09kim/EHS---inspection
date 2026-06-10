@@ -48,3 +48,4 @@ const PROCESSES = [
   { v:"CCSS",     i:"🖥️" }, { v:"Gas",   i:"💨" }, { v:"Green",  i:"🌿" },
   { v:"UPW",      i:"💧" }, { v:"HVAC",  i:"🌀" }, { v:"ETC",    i:"📋" },
 ];
+export default App
