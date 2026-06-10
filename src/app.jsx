@@ -1,0 +1,51 @@
+import { useState, useRef } from "react";
+import * as XLSX from "xlsx";
+
+// ══════════════════════════════════════════════════════════════
+// 데이터
+// ══════════════════════════════════════════════════════════════
+
+const BUILDINGS_LINES = [
+  { v:"NRDK동 1라인",  i:"1️⃣",  color:"#0284C7" },
+  { v:"NRDK동 2라인",  i:"2️⃣",  color:"#0284C7" },
+  { v:"NRDK동 3라인",  i:"3️⃣",  color:"#0284C7" },
+  { v:"NRDK동 5라인",  i:"5️⃣",  color:"#0284C7" },
+  { v:"SR1동 6-1라인", i:"🅐",  color:"#7C3AED" },
+  { v:"SR1동 6-2라인", i:"🅑",  color:"#7C3AED" },
+  { v:"SR1동 6-3라인", i:"🅒",  color:"#7C3AED" },
+  { v:"SR2동 S1 Ph1",  i:"🅢",  color:"#059669" },
+  { v:"SR2동 S1 Ph2",  i:"🅢",  color:"#059669" },
+  { v:"SR2동 S1 Ph3",  i:"🅢",  color:"#059669" },
+  { v:"SR2동 UT1",     i:"🔧", color:"#059669" },
+  { v:"SR2동 UT2",     i:"🔩", color:"#059669" },
+  { v:"SR3동 그린1",   i:"🌿", color:"#16A34A" },
+  { v:"SR3동 그린2",   i:"🌱", color:"#16A34A" },
+  { v:"SR1동",         i:"🏭", color:"#64748B" },
+  { v:"SR2동",         i:"🏭", color:"#64748B" },
+  { v:"SR3동",         i:"🏭", color:"#64748B" },
+  { v:"NRDK동",        i:"🏢", color:"#64748B" },
+];
+
+const FLOORS = [
+  { v:"B1F", i:"⬇️" }, { v:"1F",  i:"1️⃣" }, { v:"2F",  i:"2️⃣" },
+  { v:"3F",  i:"3️⃣" }, { v:"4F",  i:"4️⃣" }, { v:"5F",  i:"5️⃣" },
+  { v:"6F",  i:"6️⃣" }, { v:"7F",  i:"7️⃣" }, { v:"8F",  i:"8️⃣" },
+  { v:"9F",  i:"9️⃣" }, { v:"10F", i:"🔟" }, { v:"11F", i:"⬆️" },
+];
+
+const ZONES = [
+  { v:"Main FAB", i:"🏭" }, { v:"CSF",  i:"❄️" }, { v:"FSF",   i:"🔥" },
+  { v:"Plenum",   i:"💨" }, { v:"실험실", i:"🔬" }, { v:"기계실", i:"⚙️" },
+  { v:"기타",     i:"📦" },
+];
+
+const PROCESSES = [
+  { v:"Clean",    i:"🧼" }, { v:"CMP",   i:"💿" }, { v:"CVD",    i:"🫧" },
+  { v:"Diff",     i:"🌡️" }, { v:"Etch",  i:"⚗️" }, { v:"IMP",    i:"⚡" },
+  { v:"Metal",    i:"🔩" }, { v:"Photo", i:"📸" }, { v:"MI",     i:"🔍" },
+  { v:"MOCVD",    i:"💎" }, { v:"Module",i:"📦" }, { v:"EDS",    i:"📊" },
+  { v:"PKG",      i:"📫" }, { v:"TnS",   i:"🧪" }, { v:"Analysis",i:"🔬" },
+  { v:"CCSS",     i:"🖥️" }, { v:"Gas",   i:"💨" }, { v:"Green",  i:"🌿" },
+  { v:"UPW",      i:"💧" }, { v:"HVAC",  i:"🌀" }, { v:"ETC",    i:"📋" },
+];
+export default App
